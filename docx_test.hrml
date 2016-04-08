@@ -1,0 +1,7 @@
+<p>Hello this is a test.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This is a test footnote.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
