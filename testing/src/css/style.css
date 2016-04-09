@@ -61,6 +61,7 @@ table {
 	flex-flow:row;
 	height:100%;
 	position:absolute;
+	overflow-x: auto;
 	width:100%;
 }
 
@@ -73,14 +74,17 @@ table {
 }
 
 .edition {
-	width: 451px;
+	height: calc(100%-20px);
 	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 40px;
+	padding-top: 20px;
 	display: inline-block;
 	white-space: normal;
 	flex: 1;
 	-webkit-flex: 1;
+}
+
+.edition:last-child {
+	padding-right: 40px;
 }
 
 .ed-number {
@@ -139,4 +143,28 @@ a:hover {
 }
 .toc a {
 	border-bottom: 2px solid black;
+}
+
+.edition.not-active>.content {
+	display:none;
+}
+.edition.not-active {
+	display: none;
+}
+
+::-webkit-scrollbar {
+    height: 20px;
+    width: 0px;
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-bottom: 5px solid white;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+}
+
+::-webkit-scrollbar-corner {
+    background: white;
 }
