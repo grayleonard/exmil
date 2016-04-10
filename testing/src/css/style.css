@@ -34,7 +34,7 @@ html {
 body {
 	height: 100%;
 	line-height: 1;
-	font-family: baskerville;
+	font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
 }
 ol, ul {
 	list-style: none;
@@ -52,6 +52,18 @@ table {
 	border-spacing: 0;
 }
 
+@media only screen and (min-width: 768px) {
+	#navigation {
+		margin-left: 20px;
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#navigation {
+		margin-top: 10px;
+	}
+}
 .container {
 	display: -webkit-box;
 	display: -moz-box;
@@ -64,7 +76,7 @@ table {
 }
 
 .full_width {
-	width: auto;
+	width: 100%;
 }
 
 .full_height {
@@ -72,13 +84,18 @@ table {
 }
 
 .edition {
-	height: calc(100%-20px);
 	padding-left: 40px;
 	padding-top: 20px;
+	padding-bottom: 40px;
 	display: inline-block;
 	white-space: normal;
 	flex: 1;
 	-webkit-flex: 1;
+}
+
+.edition>.content {
+	display:none;
+	line-height: 19px;
 }
 
 .edition:last-child {
@@ -86,7 +103,7 @@ table {
 }
 
 .ed-number {
-	height:50px !important;
+	height:45px !important;
 	padding-bottom:10px;
 }
 
@@ -96,7 +113,7 @@ table {
 }
 
 .cover-photo .exmil-logo {
-	height: 80px !important;
+	height: 70px !important;
 }
 
 .cover-photo .photo {
@@ -135,26 +152,81 @@ a:hover {
 	cursor:pointer;
 }
 .toc {
-	line-height: 30px;
+	line-height: 25px;
 	text-align: justify;
 	padding-top:10px;
-	font-size: 14px;
+	font-size: 15px;
 }
 .toc a {
 	border-bottom: 2px solid black;
 }
 
-.edition.not-active>.content {
+.edition>.content {
 	display:none;
 }
 .edition.not-active {
 	display: none;
 }
 
+.edition.active {
+	max-width: 650px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0 auto;
+}
+
+.edition.active>.content {
+	display: block;
+}
+
+.edition.active>.content p {
+	text-indent: 50px;
+	text-align: justify;
+	padding-top: 10px;
+}
+
+.edition.active>.content img {
+	padding-top: 20px;
+}
+
+.entry {
+	padding-top: 40px;
+}
+
+.entry>a {
+	padding: 0 4px 0 4px;
+}
+
 ::-webkit-scrollbar {
     height: 20px;
     width: 0px;
     background: white;
+}
+
+.dont-show {
+	display:none !important;
+}
+
+.show {
+	display:block;
+}
+
+#nav-button {
+	padding: 8px 5px 8px 5px;
+	font-size:1.4em;
+
+}
+#nav-button:hover {
+		background-color: black;
+		color: white;
+		text-decoration-color: white;
+}
+
+#navigation {
+	z-index:1;
+	display:inline-block;
+	position:fixed;
+	background-color: white;
 }
 
 ::-webkit-scrollbar-thumb {

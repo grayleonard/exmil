@@ -1,50 +1,17 @@
+<script src="js/control.js"></script>
 <script>
-var hf = function() {
-	if(document.location.hash.length > 1) {
-		var page = document.location.hash.replace("#", "").split("/");
-		var edition = $('.edition#'+page[0]);
-		console.log(edition);
-		if(edition.length != 0) {
-			var text = page[1];
-			edition.addClass('active').removeClass('not-active');
-			$('.entries').addClass('show').removeClass('dont-show');
-			$('.edition').not(edition).addClass('not-active').removeClass('active');
-			$('#navigation').addClass('show').removeClass('dont-show');
-			$(document).scrollTop( $('#' + page[0]).offset().top-40 );
-			if(text != undefined) {
-				$(document).scrollTop( $('#' + page[1]).offset().top );
-				$(window).load(function() {
-					console.log('calling2');
-					$(document).scrollTop( $('#' + page[1]).offset().top );
-				});
-			}
-		} else {
-			hp();
-		}
-	} else {
-		hp();
-	}
-
-}
-var hp = function() {
-		$('.entries').addClass('dont-show').removeClass('show');
-		$('.edition').addClass('active').removeClass('not-active');
-		$('#navigation').addClass('dont-show').removeClass('show');
-}
-$(document).ready(function() {
-	console.log('calling');
-	hf();
-
-	$('.cover-photo').click(function(e){
-		console.log($(this).attr('id'));
-		document.location.hash = $(this).attr('id');
-	});
-});
-$(window).on('hashchange', function() {
-	hf();
+echo.init({
+    offset: 900,
+    unload: false,
+    callback: function (element, op) {
+    	element.classList.add('full_width');
+    }
 });
 </script>
-<div class="container full_width full_height">
+<div id="navigation" class="dont-show">
+	<a href="#" id="nav-button">&#9664;</a>
+</div>
+<div class="container full_width">
 	{{> editions/one}}
 	{{> editions/two}}
 	{{> editions/three}}
