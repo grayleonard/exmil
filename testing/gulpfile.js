@@ -13,7 +13,10 @@ gulp.task('default', function() {
 	gulp.src('src/css/*.css')
 		.pipe(clean_css())
 		.pipe(gulp.dest('./dist/css/'));
-	gulp.src('src/js/*.js')
+	gulp.src('src/js/jquery*.js')
+		.pipe(gulp.dest('./dist/js/'))
+	gulp.src('src/js/control.js')
+		.pipe(uglify())
 		.pipe(gulp.dest('./dist/js/'))
 });
 

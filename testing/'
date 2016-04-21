@@ -5,11 +5,10 @@ var load_ed_imgs = function(ed, callback) {
 		return;
 	}
 	var count = 0;
-	var imgs = $('#' + ed + ' img').filter(function(a) {
-		var attr = $(this).attr('data-echo');
-		if (typeof attr !== typeof undefined && attr !== false) {
-			return true;
-		} return false;
+	var imgs = $('#' + ed + ' img').filter(function(o,i) { 
+		console.log(o+''.indexOf('data-echo'));
+		if(o+''.indexOf('data-echo') > -1) return true;
+		return false;
 	});
 	console.log(imgs);
 	$('#loading-screen').removeClass('dont-show');
