@@ -1,4 +1,10 @@
 var load_ed_imgs = function(ed, callback) {
+	console.log(has_loaded[ed-1]);
+	if(has_loaded[ed-1] == true) {
+		console.log('already loaded');
+		callback();
+		return;
+	}
 	console.log('load_ed_imgs' + ed);
 	var imgs = $('#' + ed + ' img');
 	$('#loading-screen').removeClass('dont-show');
@@ -16,6 +22,7 @@ var load_ed_imgs = function(ed, callback) {
 		}
 	});
 }
+var has_loaded = [false, false, false, false];
 var hf = function() {
 	if(document.location.hash.length > 1) {
 		var page = document.location.hash.replace("#", "").split("/");
@@ -38,6 +45,7 @@ var hf = function() {
 			}
 
 			load_ed_imgs(page[0], function() {
+				has_loaded[page[0]-1] = true;
 				console.log('got here');
 				$('#loading-screen').addClass('dont-show');
 				$(document).scrollTop( $('#' + page[0]).offset().top-40 );
