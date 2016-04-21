@@ -93,7 +93,10 @@ table {
 		white-space: normal;
 		flex: 1;
 		-webkit-flex: 1;
-}
+	}
+	.cover-photo .exmil-logo {
+		width: 100%;
+	}
 }
 .container {
 	display: -webkit-box;
@@ -132,9 +135,6 @@ table {
 	text-align: center;
 }
 
-.cover-photo .exmil-logo {
-	width: 100%;
-}
 
 .cover-photo .photo {
 	display:inline;
