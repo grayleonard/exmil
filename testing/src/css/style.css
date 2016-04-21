@@ -51,7 +51,7 @@ table {
 	border-spacing: 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 426px) {
 	#navigation {
 		margin-left: 20px;
 		margin-top: 20px;
@@ -73,10 +73,11 @@ table {
 		white-space: normal;
 		flex: 1;
 		-webkit-flex: 1;
+		min-width:300px;
 	}
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 425px) {
 	#navigation {
 		margin-top: 10px;
 	}
