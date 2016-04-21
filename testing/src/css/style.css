@@ -56,12 +56,43 @@ table {
 		margin-left: 20px;
 		margin-top: 20px;
 	}
+	.container {
+		flex-flow: row;
+	}
+	.cover-photo .exmil-logo {
+		height: 70px !important;
+	}
+	.edition:last-child {
+		padding-right: 40px;
+	}
+	.edition {
+		padding-left: 40px;
+		padding-top: 20px;
+		padding-bottom: 40px;
+		display: inline-block;
+		white-space: normal;
+		flex: 1;
+		-webkit-flex: 1;
+	}
 }
 
 @media only screen and (max-width: 767px) {
 	#navigation {
 		margin-top: 10px;
 	}
+	.container {
+		flex-flow: column;
+	}
+	.edition {
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20px;
+		padding-bottom: 40px;
+		display: inline-block;
+		white-space: normal;
+		flex: 1;
+		-webkit-flex: 1;
+}
 }
 .container {
 	display: -webkit-box;
@@ -69,7 +100,6 @@ table {
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-	flex-flow:row;
 	position:absolute;
 	overflow-x: auto;
 }
@@ -82,24 +112,14 @@ table {
 	height: 100%;
 }
 
-.edition {
-	padding-left: 40px;
-	padding-top: 20px;
-	padding-bottom: 40px;
-	display: inline-block;
-	white-space: normal;
-	flex: 1;
-	-webkit-flex: 1;
-}
+
 
 .edition>.content {
 	display:none;
 	line-height: 19px;
 }
 
-.edition:last-child {
-	padding-right: 40px;
-}
+
 
 .ed-number {
 	height:45px !important;
@@ -112,7 +132,7 @@ table {
 }
 
 .cover-photo .exmil-logo {
-	height: 70px !important;
+	width: 100%;
 }
 
 .cover-photo .photo {
