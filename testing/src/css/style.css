@@ -247,13 +247,15 @@ a:hover {
 	left:0;
 	height: 100%;
 	width: 100%;
-	background: rgba( 255,255,255, .8 );
+	background: rgba( 255,255,255, .9 );
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .modal {
+	font-weight: 600;
+	font-size: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
