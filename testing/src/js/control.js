@@ -1,6 +1,7 @@
 var load_ed_imgs = function(ed, callback) {
 	console.log('load_ed_imgs' + ed);
 	var imgs = $('#' + ed + ' img');
+	$('#loading-screen').removeClass('dont-show');
 	$.each(imgs, function(idx, ele) {
 		console.log($(ele));
 		var real_url = $(ele).attr('data-echo');
@@ -38,6 +39,7 @@ var hf = function() {
 
 			load_ed_imgs(page[0], function() {
 				console.log('got here');
+				$('#loading-screen').addClass('dont-show');
 				$(document).scrollTop( $('#' + page[0]).offset().top-40 );
 				if(text != undefined) {
 					console.log(text);
