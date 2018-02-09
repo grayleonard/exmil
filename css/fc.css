@@ -1,0 +1,94 @@
+@font-face {
+   font-family: Larsseit-Light;
+   src: url('../fonts/Larsseit-Light.otf') format('opentype');
+}
+ 
+@font-face {
+   font-family: Larsseit-Thin;
+   src: url('../fonts/Larsseit-Thin.otf') format('opentype');
+}
+ 
+@font-face {
+   font-family: Larsseit-Bold;
+   src: url('../fonts/Larsseit-Bold.otf') format('opentype');
+}
+
+@font-face {
+   font-family: Larsseit-Medium;
+   src: url('../fonts/Larsseit-Medium.otf') format('opentype');
+}
+ 
+@font-face {
+   font-family: Larsseit-ExtraBold;
+   src: url('../fonts/Larsseit-ExtraBold.otf') format('opentype');
+}
+
+body {
+	font-family: "Larsseit-Medium";
+	background-color: black;
+	color: white;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	margin-top: 40px;
+	padding: 0 40px 0 40px;
+}
+
+.title {
+	font-size: 30px;
+	margin: 0 0 50px 0;
+}
+
+.body {
+	display: flex;
+	flex: 1;
+}
+
+.cover {
+	max-width: 100%;
+}
+
+.left {
+	min-width: 220px;
+	width: 220px;
+	line-height: 20px;
+}
+
+.right {
+	width: 100%;
+	padding: 0 30px 0 40px;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.buy {
+	margin-top: 40px;
+	display: flex;
+}
+
+.buybutton {
+	display: inline-block;
+	font-family: "Larsseit-Medium";
+	font-size: 20px;
+	border: none;
+	padding: 40px 0px 40px 0px;
+	background-color: white;
+	color: black;
+	cursor: pointer;
+	width: 49%;
+}
+
+.buybutton:hover {
+	color: white;
+	background-color: black;
+}
+
+.footer {
+	margin: 50px 0 20px 0;
+}
+
+a {
+	color: white;
+}
