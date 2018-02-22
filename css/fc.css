@@ -60,7 +60,7 @@ body {
 	width: 100%;
 	padding: 0 30px 0 40px;
 	font-size: 16px;
-	line-height: 20px;
+	line-height: 24px;
 }
 
 .right p:first-child {
@@ -75,7 +75,7 @@ body {
 .buybutton {
 	display: inline-block;
 	font-family: "Larsseit-Medium";
-	font-size: 20p0https://twitter.com/ura;
+	font-size: 16px;
 	border: none;
 	padding: 40px 0px 40px 0px;
 	background-color: white;
