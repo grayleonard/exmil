@@ -75,6 +75,10 @@ a, a:visited {
   transform: translateY(-50%);
 }
 
+#player video:focus {
+	outline: none;
+}
+
 .chat {
 	display: inline-block;
 	width: 300px;
