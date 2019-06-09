@@ -17,6 +17,15 @@
 	<title>Exmilitary Presents: The Eastern European Apocalypse</title>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/film.css" media="screen" />
+  <style>
+  ::cue {
+  color: #FFD22D;
+  background-color: rgba(0, 0, 0, 0.01);
+}
+video::-webkit-media-text-track-container {
+	padding-bottom: 30px;
+}
+  </style>
 </head>
 <style>
 </style>
@@ -29,12 +38,9 @@
 </div>
 <div class="content">
   <div class="player-chat-container">
-		<div id="player">
-			<video src="silverglobe.mp4" controls>
-				
-			</video>
-		</div>
+	<div id="player">
 	</div>
+</div>
 <div class="bottom-container">
   <div class="schedule-container">
 	  <p class="schedule">S C H E D U L E</p>
@@ -87,12 +93,21 @@
 </div>
 </body>
 <script>
-/*var player = new Clappr.Player({source: "https://stream.mux.com/rH01HiMrIPC1MF8tnDrMOHmarhKg9AcFI.m3u8", parentId: "#player", playback: {
+var player = new Clappr.Player({source: "https://films-streaming.s3.amazonaws.com/otsg/otsgmaster.m3u8", parentId: "#player", 
+height: "100%",
+width: "100%",
+playback: {
+/*externalTracks: [{
+	"lang": "en",
+	"label": "English",
+	"src": "silverglobe.subs.vtt",
+	"kind": "subtitles"
+}],*/
 hlsjsConfig: {
 	manifestLoadingMaxRetry: 100,
       manifestLoadingRetryDelay: 2000,
       manifestLoadingMaxRetryTimeout : 2000,
 }
-}});*/
+}});
 </script>
 </html>
