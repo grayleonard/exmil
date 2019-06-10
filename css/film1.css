@@ -4,6 +4,10 @@ html { font-family: 'Inter UI', sans-serif; }
   html { font-family: 'Inter UI var alt', sans-serif; }
 }
 
+.plyr--video {
+width: 100%;
+}
+
 html, body {
 	margin: 0 auto;
 	padding: 0;
