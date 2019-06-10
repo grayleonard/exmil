@@ -1,0 +1,161 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+html { font-family: 'Inter UI', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter UI var alt', sans-serif; }
+}
+
+html, body {
+	margin: 0 auto;
+	padding: 0;
+	background-color: black;
+	color: white;
+	font-size: 13px;
+	font-weight: 300;
+	letter-spacing: 0em;
+	line-height: 21px;
+	max-width: 1040px;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+a, a:visited {
+	color: white;
+}
+
+.header {
+	margin: 40px 40px;
+	font-size: 20px;
+	line-height: 20px;
+	letter-spacing: 1px;
+}
+
+.header img {
+	vertical-align: middle;
+}
+
+.header span {
+	margin-top: 0px;
+	font-weight: 400;
+	margin-left: 15px;
+	vertical-align: middle;
+	border-left: 2px solid white;
+	padding-left: 20px;
+}
+
+.content {
+	margin: 0 40px;
+}
+
+.player-chat-container {
+	display: flex;
+	width: 100%;
+	margin: 0 0 40px 0;
+}
+
+#player {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	
+	width: 820px;
+	height: 400px;
+}
+
+
+#player video {
+	position: absolute;
+	max-width: 100%;
+	max-height: 100%;
+  margin: 0;
+}
+
+#player video:focus {
+	outline: none;
+}
+
+.chat {
+	display: inline-block;
+	width: 300px;
+	height: 360px;
+	border: 1px solid white;
+}
+
+.bottom-container {
+	display: flex;
+}
+
+.schedule-container { 
+    padding: 0 30px 0 0px;
+    /* max-width: 500px; */
+    display: inline-block;
+    flex-grow: 1;
+    flex-basis: 500px;
+    flex-shrink: 0;
+}
+
+.about-container {
+    display: inline-block;
+    /* max-width: 300px; */
+    flex-grow: 1;
+    flex-basis: 350px;
+    flex-shrink: 0.5;
+}
+
+.schedule {
+	font-size: 24px;
+	letter-spacing: -0.016em;
+	line-height: 32px;
+	margin: 0;
+}
+
+.film-info {
+	margin-top: 20px;
+	border: 2px solid black;
+	display: flex;
+	justify-content: start;
+}
+
+.film-info > div {
+	flex-basis: 1;
+}
+
+.film-info p {
+	text-align: justify;
+}
+
+.info-container {
+	padding: 0 20px;
+}
+
+.film-info .date {
+	font-size: 12px;
+	letter-spacing: -0.008em;
+	line-height: 14px;
+}
+
+.film-info .title {
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: -0.008em;
+	line-height: 25px;
+}
+
+.film-info .poster {
+	width: 160px;
+	min-width: 160px;
+}
+
+.footer {
+	padding-top: 30px;
+	border-top: 1px solid white;
+	font-size: 12px;
+	text-align: left;
+	margin: 50px 30px;
+}
+
+.footer a {
+	margin-right: 20px;
+}
