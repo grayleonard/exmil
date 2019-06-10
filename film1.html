@@ -17,6 +17,7 @@
 	<title>Exmilitary Presents: The Eastern European Apocalypse</title>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/film1.css" media="screen" />
+	<link rel='stylesheet' href='https://unpkg.com/plyr@3/dist/plyr.css'>
 </head>
 <style>
 </style>
@@ -29,8 +30,13 @@
 </div>
 <div class="content">
   <div class="player-chat-container">
-	<div id="player">
-	</div>
+  <div class="container">
+	<video controls crossorigin playsinline poster="/poster.png"></video>
+</div>
+<!-- Plyr resources and browser polyfills are specified in the pen settings -->
+<!-- Hls.js 0.9.x and 0.10.x both have critical bugs affecting this demo. Using fixed git hash to when it was working (0.10.0 pre-release), until https://github.com/video-dev/hls.js/issues/1790 has been resolved -->
+<script src="https://cdn.rawgit.com/video-dev/hls.js/18bb552/dist/hls.min.js"></script>
+<script src='https://unpkg.com/plyr@3'></script>
 </div>
 <h1 style="margin-bottom: 40px;">Now Streaming: On The Silver Globe</h1>
 <div class="bottom-container">
@@ -85,23 +91,32 @@
 </div>
 </body>
 <script>
-var player = new Clappr.Player({source: "https://films-streaming.s3.amazonaws.com/otsg/otsgmaster1.m3u8", parentId: "#player", 
-height: "100%",
-width: "100%",
-poster: 'poster.png',
-playInline: false,
-playback: {
-externalTracks: [{
-	"lang": "en",
-	"label": "English",
-	"src": "silverglobe.subs.vtt",
-	"kind": "subtitles"
-}],
-hlsjsConfig: {
-	manifestLoadingMaxRetry: 100,
-      manifestLoadingRetryDelay: 2000,
-      manifestLoadingMaxRetryTimeout : 2000,
-}
-}});
+document.addEventListener('DOMContentLoaded', () => {
+	const source = 'https://films-streaming.s3.amazonaws.com/otsg/otsgmaster1.m3u8';
+	const video = document.querySelector('video');
+
+	// For more options see: https://github.com/sampotts/plyr/#options
+	// captions.update is required for captions to work with hls.js
+	const player = new Plyr(video, {captions: {active: true, update: true, language: 'en'}});
+
+	if (!Hls.isSupported()) {
+		video.src = source;
+	} else {
+		// For more Hls.js options, see https://github.com/dailymotion/hls.js
+		const hls = new Hls();
+		hls.loadSource(source);
+		hls.attachMedia(video);
+		window.hls = hls;
+
+		// Handle changing captions
+		player.on('languagechange', () => {
+			// Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+			setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+		});
+	}
+
+	// Expose player so it can be used from the console
+	window.player = player;
+});
 </script>
 </html>
