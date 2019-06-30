@@ -40,7 +40,7 @@ video::-webkit-media-text-track-container {
 	<div id="player">
 	</div>
 </div>
-<h1 style="margin-bottom: 40px;">Now Streaming: Letters From a Dead Man</h1>
+<h1 style="margin-bottom: 40px;">Now Streaming: Tarkovsky's Stalker</h1>
 <div class="bottom-container">
   <div class="schedule-container">
 	  <p class="schedule">S C H E D U L E</p>
@@ -67,7 +67,7 @@ video::-webkit-media-text-track-container {
 		<div class="info-container">
 			<div class="date">Sun, June 23 - June 30, 2019</div>
 			<div class="title">Letters from a Dead Man</div>
-			<div class="director">Konstantin Lopushanskiy, 1982</div>
+			<div class="director">Konstantin Lopushanskiy, 1986</div>
 			<div><p>A future breathing through gas masks, thrashing sandstorms and communicating to nothing: all the contingent results of a nuclear catastrophe (Chernobyl). A nobel prize physicist dwells in a fallout shelter, oftentimes writing to a dead son while other times sitting around a table of expiring humanists, contemplating the vacant present that once was. The radioactive outside is slowly intruding inwards - the wasteland grows - as the looming threat of an uninhabitable planet is empirically becoming true. Nihilism settles in, locates a host within humanity, and hardwires a waning civilization which contemplates all of history as one prolonged suicide. The extinction of the species will be marked by migraines followed by amnesia, resultant symptoms of the end of humanity, but also by a singularly accidental twilight - genetic and or bacterial - groundless by design.</p></div>
 		</div>
 		</div>
@@ -93,10 +93,10 @@ video::-webkit-media-text-track-container {
 </div>
 </body>
 <script>
-var player = new Clappr.Player({source: "https://films-streaming.s3.amazonaws.com/dml/dml.m3u8", parentId: "#player", 
+var player = new Clappr.Player({source: "https://films-streaming.s3.amazonaws.com/stalker/stalker.m3u8", parentId: "#player", 
 height: "100%",
 width: "100%",
-poster: 'dml.png',
+poster: 'https://sovietmoviesonline.com/covers/7.jpg',
 recycleVideo: Clappr.Browser.isMobile,
 playInline: true,
 playback: {
@@ -110,6 +110,7 @@ hlsjsConfig: {
 	manifestLoadingMaxRetry: 100,
       manifestLoadingRetryDelay: 2000,
       manifestLoadingMaxRetryTimeout : 2000,
+      capLevelToPlayerSize: true,
 }
 }});
 </script>
