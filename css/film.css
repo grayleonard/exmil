@@ -120,6 +120,7 @@ a, a:visited {
 	border: 2px solid black;
 	display: flex;
 	justify-content: start;
+	align-items: start;
 }
 
 .film-info > div {
@@ -148,8 +149,24 @@ a, a:visited {
 }
 
 .film-info .poster {
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+.film-info .poster img {
 	width: 160px;
-	min-width: 160px;
+}
+
+.film-info .poster:hover > .play-now {
+	background-color: white;
+	color: black;
+}
+
+.film-info .poster .play-now {
+	width: 160px;
+	font-size: 16px;
+	text-align: center;
+	padding: 5px 0;
 }
 
 .footer {
